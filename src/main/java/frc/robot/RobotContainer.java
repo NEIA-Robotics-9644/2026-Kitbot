@@ -26,9 +26,9 @@ public class RobotContainer {
       //add things here
    }
 
-  public Command getAutonomousCommand() {
-    return autoChooser.get();
-  }
+  /*public Command getAutonomousCommand() {
+
+  }*/
 
   public void updateAlerts() {
     // Controller disconnected alerts
@@ -36,7 +36,7 @@ public class RobotContainer {
     operatorDisconnected.set(!DriverStation.isJoystickConnected(operatorCon.getHID().getPort()));
 
     // Auto alert
-    noAutoAlert.set(
-        DriverStation.isAutonomous() && !DriverStation.isEnabled() && autoChooser.get() == noAuto);
+    /*noAutoAlert.set(
+        DriverStation.isAutonomous() && !DriverStation.isEnabled() && autoChooser.get() == noAuto);*/
   }
 }
