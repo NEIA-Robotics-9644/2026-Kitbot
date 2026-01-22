@@ -2,6 +2,7 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj.Alert;
 import edu.wpi.first.wpilibj.Alert.AlertType;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
@@ -39,4 +40,9 @@ public class RobotContainer {
     /*noAutoAlert.set(
         DriverStation.isAutonomous() && !DriverStation.isEnabled() && autoChooser.get() == noAuto);*/
   }
+
+public Command getAutonomousCommand() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getAutonomousCommand'");
+}
 }
