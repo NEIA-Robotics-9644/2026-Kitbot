@@ -2,10 +2,11 @@ package frc.robot;
 
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
+
 import edu.wpi.first.wpilibj.Alert;
 import edu.wpi.first.wpilibj.Alert.AlertType;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
-import edu.wpi.first.wpilibj.DriverStation;
 
 public class RobotContainer {
 
@@ -27,7 +28,7 @@ public class RobotContainer {
    }
 
   public Command getAutonomousCommand() {
-    return autoChooser.get();
+    return Commands.none();
   }
 
   public void updateAlerts() {
@@ -35,8 +36,5 @@ public class RobotContainer {
     driverDisconnected.set(!DriverStation.isJoystickConnected(driverCon.getHID().getPort()));
     operatorDisconnected.set(!DriverStation.isJoystickConnected(operatorCon.getHID().getPort()));
 
-    // Auto alert
-    noAutoAlert.set(
-        DriverStation.isAutonomous() && !DriverStation.isEnabled() && autoChooser.get() == noAuto);
   }
 }
