@@ -1,5 +1,7 @@
 package frc.robot.subsystems.DriveTrain;
 
+import com.revrobotics.spark.SparkMax;
+
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
 //import edu.wpi.first.wpilibj.motorcontrol.MotorControllerGroup;
 import edu.wpi.first.wpilibj.motorcontrol.Spark;
@@ -11,11 +13,11 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class DriveSubsystem extends SubsystemBase {
 
   // Motors I Included followers now 
-  private final Spark m_leftLeader = new Spark(1);
-  private final Spark m_leftFollower = new Spark(3);
+  private final SparkMax m_leftLeader = new SparkMax(1, null);
+  private final SparkMax m_leftFollower = new SparkMax(2, null);
   
-  private final Spark m_rightLeader = new Spark(2);
-  private final Spark m_rightFollower = new Spark(4);
+  private final SparkMax m_rightLeader = new SparkMax(3, null);
+  private final SparkMax m_rightFollower = new SparkMax(4, null);
 
   private final DifferentialDrive m_drive = new DifferentialDrive(m_leftLeader, m_rightLeader);
 
