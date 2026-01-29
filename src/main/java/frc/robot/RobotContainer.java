@@ -4,9 +4,18 @@ import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.Commands;
 
+import java.util.function.DoubleSupplier;
+
 import edu.wpi.first.wpilibj.Alert;
 import edu.wpi.first.wpilibj.Alert.AlertType;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+
+import edu.wpi.first.wpilibj2.command.RunCommand;
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+
+import frc.robot.subsystems.DriveTrain.CANDriveSubsystem;
+
 
 public class RobotContainer {
 
@@ -23,9 +32,29 @@ public class RobotContainer {
   private final CommandXboxController driverCon = new CommandXboxController(0);
   private final CommandXboxController operatorCon = new CommandXboxController(1);
 
+  private final CANDriveSubsystem driveSubsystem = new CANDriveSubsystem();
+  public static int DRIVE_SCALING = 2;
+  public static int ROATAION_SCALING = 3;
+
+
+
+
   public RobotContainer(){
-      //add things here
+    configureBindings();
+
+    public Command driveArcade(DoubleSupplier xspeed, doubleSupplier zRotation){
+      
+    }
+
+    driveSubsystem.setDefaultCommand(
+      driveSubsystem.driveArcade(
+        () -> -driverCon.getRightY()* DRIVE_SCALING, 
+        () -> -driverCon.getLeftX()* ROATAION_SCALING ));
    }
+
+
+
+   private void configureBindings() {}
 
   public Command getAutonomousCommand() {
     return Commands.none();
@@ -38,8 +67,11 @@ public class RobotContainer {
 
   }
 
-public Command getAutonomousCommand() {
+/*public Command getAutonomousCommand() {
     // TODO Auto-generated method stub
     throw new UnsupportedOperationException("Unimplemented method 'getAutonomousCommand'");
 }
+    */
 }
+
+
