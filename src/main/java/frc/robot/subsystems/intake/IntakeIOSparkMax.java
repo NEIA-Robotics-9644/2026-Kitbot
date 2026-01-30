@@ -1,20 +1,13 @@
-package frc.robot.subsystems;
-
+package frc.robot.subsystems.intake;
 import com.revrobotics.spark.SparkMax;
 
-//import edu.wpi.first.math.util.Units;
-import edu.wpi.first.wpilibj.motorcontrol.Spark;
-
-
-
- 
-public class intakeIOsparkmax implements intakeIO{
+public class IntakeIOSparkMax implements IntakeIO{
 
     
     private SparkMax motor;
 
 
-    public intakeIOsparkmax(int id) {
+    public IntakeIOSparkMax(int id) {
          this.motor = new SparkMax(id, null);
     }
 

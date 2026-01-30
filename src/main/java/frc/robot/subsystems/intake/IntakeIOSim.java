@@ -1,6 +1,6 @@
-package frc.robot.subsystems;
+package frc.robot.subsystems.intake;
 
-public class intakeIOsim implements intakeIO{
+public class IntakeIOSim implements IntakeIO{
     private double velocityRPM = 0.0;
 
     private double maxSpeedRPM = 5000.0;

@@ -7,6 +7,9 @@ import edu.wpi.first.wpilibj2.command.Commands;
 import edu.wpi.first.wpilibj.Alert;
 import edu.wpi.first.wpilibj.Alert.AlertType;
 import edu.wpi.first.wpilibj2.command.button.CommandXboxController;
+import frc.robot.subsystems.DriveTrain.DriveSubsystem;
+import frc.robot.subsystems.Shooter.ShooterSubsystem;
+import frc.robot.subsystems.intake.Intake;
 
 public class RobotContainer {
 
@@ -15,9 +18,14 @@ public class RobotContainer {
   private final Alert operatorDisconnected =
       new Alert("Operator controller disconnected (port 1).", AlertType.kWarning);
   private final Alert noAutoAlert =
-      new Alert("Please select an auto routine!!! 😳", AlertType.kError);
+      new Alert("Please select an auto routine!!!", AlertType.kError);
 
   private Command noAuto = Commands.none();
+
+  private final Intake intake;
+  private final DriveSubsystem drive;
+  private final ShooterSubsystem shooter;   
+
 
   // Controller
   private final CommandXboxController driverCon = new CommandXboxController(0);
@@ -25,6 +33,10 @@ public class RobotContainer {
 
   public RobotContainer(){
       //add things here
+      intake = new Intake(null);
+      drive = new DriveSubsystem();
+      shooter = new ShooterSubsystem(0);
+    
    }
 
   public Command getAutonomousCommand() {
@@ -37,4 +49,10 @@ public class RobotContainer {
     operatorDisconnected.set(!DriverStation.isJoystickConnected(operatorCon.getHID().getPort()));
 
   }
+<<<<<<< Updated upstream
+=======
+
+  
+
+>>>>>>> Stashed changes
 }
