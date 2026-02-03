@@ -49,10 +49,9 @@ public class RobotContainer {
     operatorDisconnected.set(!DriverStation.isJoystickConnected(operatorCon.getHID().getPort()));
 
   }
-<<<<<<< Updated upstream
-=======
 
-  
-
->>>>>>> Stashed changes
+public Command getAutonomousCommand() {
+    // TODO Auto-generated method stub
+    throw new UnsupportedOperationException("Unimplemented method 'getAutonomousCommand'");
+}
 }
