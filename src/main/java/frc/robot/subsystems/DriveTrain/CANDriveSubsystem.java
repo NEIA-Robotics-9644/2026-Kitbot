@@ -1,13 +1,17 @@
 package frc.robot.subsystems.DriveTrain;
 
-import com.revrobotics.spark.SparkBase.PersistMode;
-import com.revrobotics.spark.SparkBase.ResetMode;
+import java.util.function.DoubleSupplier;
+
 import com.revrobotics.spark.SparkLowLevel.MotorType;
 import com.revrobotics.spark.SparkMax;
+import com.revrobotics.spark.SparkBase.PersistMode;
+import com.revrobotics.spark.SparkBase.ResetMode;
 import com.revrobotics.spark.config.SparkMaxConfig;
 
 import edu.wpi.first.wpilibj.drive.DifferentialDrive;
+import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
+
 import frc.robot.subsystems.DriveTrain.Constants.DriveConstants;
 
 //import static frc.robot.Constants.DriveConstants.*;
@@ -46,5 +50,14 @@ public class CANDriveSubsystem extends SubsystemBase {
   public void periodic() {
     left_Follower.set(left_Leader.get());
     right_Follower.set(right_Leader.get());
+    
   }
+  public Command driveArcade(DoubleSupplier xSpeed, DoubleSupplier zRotation) {
+    return this.run(
+    () -> drive.arcadeDrive(xSpeed.getAsDouble(), zRotation.getAsDouble()));
+  }
+
 }
+ 
+
+
