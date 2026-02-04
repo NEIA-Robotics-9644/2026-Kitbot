@@ -1,5 +1,10 @@
 package frc.robot.subsystems.intake;
 
+<<<<<<< Updated upstream
+=======
+import frc.robot.subsystems.intake.IntakeIO;
+
+>>>>>>> Stashed changes
 public class IntakeIOSim implements IntakeIO{
     private double velocityRPM = 0.0;
 

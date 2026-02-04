@@ -1,8 +1,18 @@
 package frc.robot.subsystems.intake;
 
+<<<<<<< Updated upstream
 
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 
+=======
+import edu.wpi.first.wpilibj2.command.Command;
+import edu.wpi.first.wpilibj2.command.Commands;
+import edu.wpi.first.wpilibj2.command.SubsystemBase;
+import edu.wpi.first.wpilibj2.command.Command.InterruptionBehavior;
+
+import java.lang.System.Logger;
+import java.util.function.DoubleSupplier;
+>>>>>>> Stashed changes
 
 
 public class Intake extends SubsystemBase{
